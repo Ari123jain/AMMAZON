@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="icon" type="image/ico" href="/assets/logo.jpg" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.js"></script>
+<script src="/js/product.js"></script>
+<link rel="stylesheet" href="/css/product.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary navbar-top">
+  <a class="navbar-brand" href="/">AMMA ZON</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="ml-auto px-2 m-1">
+      <span id="nav-username" class="text-secondary font-weight-bold m-1">
+          <a class="navbar-brand" href="/login">Login</a>
+          &nbsp;&nbsp;
+          <a class="navbar-brand" href="/signup">Signup</a>
+    </span>
+    </div>
+  </div>
+</nav>
+<br>
+<h1 class="h1 text-center">Products</h1>
+
+
+<div class="container my-2">
+
+  <div class="row" id="products-container">
+      
+  </div>
+</div>
+<script>
+ loadProductsbyId()
+  </script>
+  <div id="container-product">
+    
+  </div>
+  
+
+
+
+  {{!-- FOOTER --}}
+<footer id="footer" class="bg-dark text-white py-5">
+    <div class="container">
+      <p class="float-right">
+      <a href="#">Back to top</a>
+    </p>
+    
+      <div class="row">
+        <div class="col-lg-3 col-12">
+          <h4 class="font-rubik font-size-20">Amma Zon</h4>
+          <p class="font-size-14 font-rale text-white-50">A Complete Family Shopping.</p>
+        </div>
+        <div class="col-lg-2 col-12">
+          <h4 class="font-rubik font-size-20">Information</h4>
+          <div class="d-flex flex-column flex-wrap">
+            <a href="/togetstarted" class="font-rale font-size-14 text-white-50 pb-1">About Us</a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-12">
+          <h4 class="font-rubik font-size-20">Account</h4>
+          <div class="d-flex flex-column flex-wrap">
+            <a href="/login" class="font-rale font-size-14 text-white-50 pb-1">My Account</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
+  <div class="copyright text-center bg-dark text-white py-2">
+    <p class="font-rale font-size-14">&copy; Copyrights 2020. Made with 💓 by  <a href="https://www.linkedin.com/in/arihant-jain-58a681232/" class="color-second">Arihant Jain</a></p>
+  </div>
+  </body>
+</html>

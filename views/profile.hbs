@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="icon" type="image/ico" href="/assets/logo.jpg" />
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.js"></script>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script defer src="/js/profile.js"></script>
+    <link rel="stylesheet" href="/css/profile.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary navbar-top">
+  <a class="navbar-brand" href="/">AMMA ZON</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="ml-auto px-2 m-1">
+      <span id="nav-username" class="text-secondary font-weight-bold m-1">
+          <a class="navbar-brand" href="/login">Logout</a>
+    </span>
+    </div>
+  </div>
+</nav>
+<br>
+    <h1>Account Details</h1>
+    <table cellspacing="10" cellpadding="10" border="1">
+        <tr>
+        <th>UserId</th>
+        <td>{{user.id}}</td>
+        </tr>
+        <tr>
+        <th>Username</th>
+        <td>{{user.username}}</td>
+        </tr>
+        <tr>
+        <th>Email Id</th>
+        <td>{{user.email}}</td>
+        </tr>
+        <tr>
+        <th>Profile Photo</th>
+        <td> <img src="{{user.avatar}}" height="200px" width="200px">
+        </td>
+        </tr>
+    </table>
+  {{!-- CHAT ROOM FOR SALE AND PRUCHASE --}}
+    <br>
+    
+    <h3>CHAT ROOM</h3>
+    <br>
+    <div id="loginBox">
+
+        <input id="inpUsername" placeholder="Username" readonly value="{{user.username}}">
+        <button id="btnStart">START Chat</button>
+
+    </div>
+    <br><br>
+     <div id="chatBox">
+
+        <input id="inpToUser" placeholder="Send to">
+        <input id="inpNewMsg" placeholder="New Message">
+        <button id="btnSendMsg">SEND</button>
+        <button id="clearmsg">Clear All Messages</button>
+        <button id="btnEnd">END Chat</button>
+        <ul id="ulMsgs">
+
+        </ul>
+
+    </div>
+
+    {{!-- PRODUCTS YOU ARE SELLING --}}
+    
+    {{!-- FORM TO SELL PRODUCTS --}}
+    <br>
+    <br>
+    <h3>Add A Product To Sell</h3>
+    <br>
+<form action="/addproduct" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <label>User Name</label>
+      <input type="text" readonly class="form-control" name="username" value="{{user.username}}">
+    </div>
+    <div class="form-group">
+      <label>Name</label>
+      <small class="form-text text-muted">Enter the name without use of / or . or , or ' and " only</small>
+      <input type="text" class="form-control" name="name">
+    </div>
+    <div class="form-group">
+      <label>Company</label>
+      <input type="text" class="form-control" name="company">
+    </div>
+    <div class="form-group">
+      <label>Price</label>
+      <small class="form-text text-muted">Enter the price without any comma and decimal only.</small>
+      <input type="text" class="form-control" name="price">
+    </div>
+    <div class="form-group">
+      <label for="avatar">Product Photo</label>
+    <input class="form-control" type="file" name="avatar" id="avatar" placeholder="Product Photo">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  {{!-- FOOTER --}}
+<footer id="footer" class="bg-dark text-white py-5">
+    <div class="container">
+      <p class="float-right">
+      <a href="#">Back to top</a>
+    </p>
+    
+      <div class="row">
+        <div class="col-lg-3 col-12">
+          <h4 class="font-rubik font-size-20">Amma Zon</h4>
+          <p class="font-size-14 font-rale text-white-50">A Complete Family Shopping.</p>
+        </div>
+        <div class="col-lg-2 col-12">
+          <h4 class="font-rubik font-size-20">Information</h4>
+          <div class="d-flex flex-column flex-wrap">
+            <a href="/togetstarted" class="font-rale font-size-14 text-white-50 pb-1">About Us</a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-12">
+          <h4 class="font-rubik font-size-20">Account</h4>
+          <div class="d-flex flex-column flex-wrap">
+            <a href="/login" class="font-rale font-size-14 text-white-50 pb-1">My Account</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
+  <div class="copyright text-center bg-dark text-white py-2">
+    <p class="font-rale font-size-14">&copy; Copyrights 2020. Made with 💓 by  <a href="https://www.linkedin.com/in/arihant-jain-58a681232/" class="color-second">Arihant Jain</a></p>
+  </div>
+  </body>
+</html>
